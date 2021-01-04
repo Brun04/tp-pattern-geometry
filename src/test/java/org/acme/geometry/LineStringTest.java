@@ -30,4 +30,10 @@ public class LineStringTest {
 		Assert.assertEquals(0.0, l.getPointN(1).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(0.0, l.getPointN(1).getCoordinate().getY(), EPSILON);
 	}
+	
+	@Test
+	public void testType() {
+		LineString l = new LineString();
+		Assert.assertEquals("linestring", l.getType());
+	}
 }
