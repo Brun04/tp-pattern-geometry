@@ -11,6 +11,7 @@ public class LineString implements Geometry{
 	}
 	
 	public LineString(List<Point> points) {
+		assert(points != null);
 		this.points = points;
 	}
 	

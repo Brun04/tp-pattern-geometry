@@ -8,6 +8,7 @@ public class Point implements Geometry{
 	}
 	
 	public Point(Coordinate coordinate) {
+		assert(coordinate != null);
 		this.coordinate = coordinate;
 	}
 	
