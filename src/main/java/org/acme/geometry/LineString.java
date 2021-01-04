@@ -35,4 +35,12 @@ public class LineString implements Geometry{
 			this.points.get(i).translate(dx, dy);
 		}
 	}
+	
+	public Geometry clone() {
+		List<Point> pointsC = new ArrayList<Point>();
+		for(int i=0; i < this.points.size(); i++) {
+			pointsC.add((Point)this.points.get(i).clone());
+		}
+		return new LineString(pointsC);
+	}
 }

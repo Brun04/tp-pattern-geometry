@@ -15,7 +15,7 @@ public class PointTest {
 	
 	@Test
 	public void testConstructor(){
-		Point p = new Point(new Coordinate(1.0, -2.5));
+		Point p = SampleFactory.createPointM();
 		Assert.assertEquals(1.0, p.getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
 	}
@@ -28,9 +28,25 @@ public class PointTest {
 	
 	@Test
 	public void testTranslate() {
-		Point p = new Point(new Coordinate(1.0, -2.5));
+		Point p = SampleFactory.createPointM();
 		p.translate(-0.7, 0.0);
 		Assert.assertEquals(0.3, p.getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
+	}
+	
+	@Test
+	public void testEmptyTranslate() {
+		Point p = SampleFactory.createPoint0();
+		p.translate(-0.7, 0.0);
+		Assert.assertTrue(p.isEmpty());
+	}
+	
+	@Test
+	public void testClone() {
+		Point p = SampleFactory.createPointM();
+		Geometry copy = p.clone();
+		copy.translate(-0.7, 10.0);
+		Assert.assertEquals(1.0, p.getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
 	}
 }
