@@ -13,5 +13,12 @@ public class CoordinateTest {
 		Assert.assertEquals(0.0, c.getX(), EPSILON);
 		Assert.assertEquals(0.0, c.getY(), EPSILON);
 	}
+	
+	@Test
+	public void testConstructor(){
+		Coordinate c = new Coordinate(1.0, -5.2);
+		Assert.assertEquals(1.0, c.getX(), EPSILON);
+		Assert.assertEquals(-5.2, c.getY(), EPSILON);
+	}
 
 }
