@@ -11,6 +11,10 @@ public class Point implements Geometry{
 		this.coordinate = coordinate;
 	}
 	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+
 	public String getType() {
 		return "point";
 	}
