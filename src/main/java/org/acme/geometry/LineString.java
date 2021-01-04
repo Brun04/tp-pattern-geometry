@@ -1,12 +1,13 @@
 package org.acme.geometry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LineString implements Geometry{
 	private List<Point> points;
 	
 	public LineString() {
-		
+		this.points = new ArrayList<Point>();
 	}
 	
 	public LineString(List<Point> points) {
