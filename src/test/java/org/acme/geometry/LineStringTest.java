@@ -23,12 +23,10 @@ public class LineStringTest {
 		points.add(new Point());
 		LineString l = new LineString(points);
 		Assert.assertEquals(2, l.getNumPoints());
-		
-		
+		// contents
 		Assert.assertEquals(1.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, l.getPointN(0).getCoordinate().getY(), EPSILON);
-		Assert.assertEquals(0.0, l.getPointN(1).getCoordinate().getX(), EPSILON);
-		Assert.assertEquals(0.0, l.getPointN(1).getCoordinate().getY(), EPSILON);
+		Assert.assertTrue(l.getPointN(1).isEmpty());
 	}
 	
 	@Test
