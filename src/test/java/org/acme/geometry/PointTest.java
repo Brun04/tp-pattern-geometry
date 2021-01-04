@@ -20,4 +20,10 @@ public class PointTest {
 		Assert.assertEquals(1.0, p.getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
 	}
+	
+	@Test
+	public void testType() {
+		Point p = new Point();
+		Assert.assertEquals("point", p.getType());
+	}
 }
