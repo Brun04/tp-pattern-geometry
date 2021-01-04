@@ -25,4 +25,12 @@ public class PointTest {
 		Point p = new Point();
 		Assert.assertEquals("point", p.getType());
 	}
+	
+	@Test
+	public void testTranslate() {
+		Point p = new Point(new Coordinate(1.0, -2.5));
+		p.translate(-0.7, 0.0);
+		Assert.assertEquals(0.3, p.getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
+	}
 }
