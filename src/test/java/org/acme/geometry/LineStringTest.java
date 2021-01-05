@@ -15,7 +15,7 @@ public class LineStringTest {
 	
 	@Test
 	public void testConstructor(){
-		LineString l = SampleFactory.createLineString();
+		LineString l = SampleFactory.createLineString0M();
 		Assert.assertEquals(2, l.getNumPoints());
 		Assert.assertEquals(1.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, l.getPointN(0).getCoordinate().getY(), EPSILON);
@@ -31,10 +31,20 @@ public class LineStringTest {
 	
 	@Test
 	public void testClone() {
-		LineString l = SampleFactory.createLineString();
+		LineString l = SampleFactory.createLineString0M();
 		Geometry copy = l.clone();
 		copy.translate(-0.7, 10.0);
 		Assert.assertEquals(1.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(-2.5, l.getPointN(0).getCoordinate().getY(), EPSILON);
+	}
+	
+	@Test
+	public void testGetEnvelope() {
+		LineString l = SampleFactory.createLineStringM0N();
+		Envelope e = l.getEnvelope();
+		Assert.assertEquals(0.0, e.getXmin(), EPSILON);
+		Assert.assertEquals(-2.5, e.getYmin(), EPSILON);
+		Assert.assertEquals(1.0, e.getXmax(), EPSILON);
+		Assert.assertEquals(3.0, e.getYmax(), EPSILON);
 	}
 }
