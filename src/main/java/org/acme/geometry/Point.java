@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class Point implements Geometry{
+public class Point extends AbstractGeometry implements Geometry{
 	private Coordinate coordinate;
 	
 	public Point() {
