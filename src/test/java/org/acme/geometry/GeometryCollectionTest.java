@@ -55,7 +55,7 @@ public class GeometryCollectionTest {
 	public void testTranslate() {
 		GeometryCollection geomC = SampleFactory.createGeometryColl();
 		geomC.translate(1.0, 5.0);
-		Assert.assertEquals("GEOMETRYCOLLECTION(LINESTRING(2.0 2.5,1.0 8.0),POINT(2.0 7.0),POINT(1.5 6.0))", ((AbstractGeometry)geomC).asText());
+		Assert.assertEquals("GEOMETRYCOLLECTION(LINESTRING(2.0 2.5,1.0 8.0),POINT(2.0 7.0),POINT(1.5 6.0))", geomC.asText());
 	}
 	
 	@Test
