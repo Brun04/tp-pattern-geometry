@@ -16,7 +16,7 @@ public class Envelope {
 	}
 	
 	public boolean isEmpty() {
-		return this.bottomLeft.isEmpty() && this.topRight.isEmpty();
+		return this.bottomLeft.isEmpty() || this.topRight.isEmpty();
 	}
 	
 	public double getXmin() {

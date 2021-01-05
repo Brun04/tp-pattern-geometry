@@ -28,6 +28,13 @@ public class LineStringTest {
 		Assert.assertEquals("linestring", l.getType());
 	}
 	
+	@Test
+	public void testIsEmpty() {
+		LineString l = new LineString();
+		Assert.assertTrue(l.isEmpty());
+		Assert.assertFalse(SampleFactory.createLineStringM0N().isEmpty());
+	}
+	
 	
 	@Test
 	public void testClone() {

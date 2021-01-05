@@ -28,7 +28,7 @@ public class LineString implements Geometry{
 	}
 	
 	public boolean isEmpty() {
-		return this.points == null;
+		return this.points.size() == 0;
 	}
 	
 	public void translate(double dx, double dy) {
@@ -37,6 +37,7 @@ public class LineString implements Geometry{
 		}
 	}
 	
+	@Override
 	public Geometry clone() {
 		List<Point> pointsC = new ArrayList<Point>();
 		for(int i=0; i < this.points.size(); i++) {

@@ -11,6 +11,8 @@ public class PointTest {
 	public void testDefaultConstructor(){
 		Point p = new Point();
 		Assert.assertTrue(p.isEmpty());
+		Assert.assertTrue(Double.isNaN(p.getCoordinate().getX()));
+		Assert.assertTrue(Double.isNaN(p.getCoordinate().getY()));
 	}
 	
 	@Test
@@ -29,6 +31,14 @@ public class PointTest {
 	public void testType() {
 		Point p = new Point();
 		Assert.assertEquals("point", p.getType());
+	}
+	
+	@Test
+	public void testIsEmpty() {
+		Point p = SampleFactory.createPointM();
+		Assert.assertFalse(p.isEmpty());
+		p = SampleFactory.createPoint0();
+		Assert.assertTrue(p.isEmpty());
 	}
 	
 	@Test
