@@ -32,4 +32,10 @@ public class WktWriterTest {
 		WktWriter writer = new WktWriter();
 		Assert.assertEquals("LINESTRING EMPTY", writer.write(g));
 	}
+	
+	@Test
+	public void testGetName() {
+		GeometryWriter gW = new WktWriter();
+		Assert.assertEquals("WKT", gW.getName());
+	}
 }
