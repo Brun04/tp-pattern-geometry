@@ -30,7 +30,7 @@ public class LineStringTest {
 	@Test
 	public void testType() {
 		LineString l = new LineString();
-		Assert.assertEquals("linestring", l.getType());
+		Assert.assertEquals("LineString", l.getType());
 	}
 	
 	@Test

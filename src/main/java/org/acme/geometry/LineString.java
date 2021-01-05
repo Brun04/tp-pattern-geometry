@@ -24,7 +24,7 @@ public class LineString extends AbstractGeometry implements Geometry{
 	}
 	
 	public String getType() {
-		return "linestring";
+		return "LineString";
 	}
 	
 	public boolean isEmpty() {

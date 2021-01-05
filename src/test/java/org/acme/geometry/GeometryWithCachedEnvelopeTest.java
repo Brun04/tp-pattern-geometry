@@ -19,7 +19,7 @@ public class GeometryWithCachedEnvelopeTest {
 	public void testType() {
 		Geometry g = SampleFactory.createPointM();
 		g = new GeometryWithCachedEnvelope(g);
-		Assert.assertEquals("point", g.getType());
+		Assert.assertEquals("Point", g.getType());
 	}
 	
 	@Test

@@ -1,7 +1,10 @@
 package org.acme.geometry;
 
-public class WktWriter {
+public class WktWriter implements GeometryWriter{
 
+	public String getName() {
+		return "WKT";
+	}
 	
 	public String write(Geometry geom) {
 		String wkt = "";

@@ -36,7 +36,7 @@ public class PointTest {
 	@Test
 	public void testType() {
 		Point p = new Point();
-		Assert.assertEquals("point", p.getType());
+		Assert.assertEquals("Point", p.getType());
 	}
 	
 	@Test

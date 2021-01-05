@@ -17,7 +17,7 @@ public class Point extends AbstractGeometry implements Geometry{
 	}
 
 	public String getType() {
-		return "point";
+		return "Point";
 	}
 	
 	public boolean isEmpty() {

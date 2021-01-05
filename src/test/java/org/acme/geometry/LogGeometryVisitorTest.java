@@ -10,7 +10,7 @@ public class LogGeometryVisitorTest {
 	
 	@Test
 	public void testVisitPoint() {
-		String wanted = "I am a point with x=3.0 and y=4.0";
+		String wanted = "I am a Point with x=3.0 and y=4.0";
 		ByteArrayOutputStream outStr = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(outStr);
 		LogGeometryVisitor visitor = new LogGeometryVisitor(out);
@@ -21,7 +21,7 @@ public class LogGeometryVisitorTest {
 	
 	@Test
 	public void testVisitLineString() {
-		String wanted = "I am a linestring defined by 3 point(s)"; 
+		String wanted = "I am a LineString defined by 3 point(s)"; 
 		ByteArrayOutputStream outStr = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(outStr);
 		LogGeometryVisitor visitor = new LogGeometryVisitor(out);
