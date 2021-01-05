@@ -1,7 +1,9 @@
 package org.acme.geometry;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class GeometryWriterTest {
 	
@@ -24,4 +26,15 @@ public class GeometryWriterTest {
 				+ "\"Point\", \"coordinates\": [3.0, 4.0]}}]}", writer.write(g));
 	}
 
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
+	@Test
+	public void testUnsupportedFormat() {
+		GeometryWriterFactory writerFactory = new GeometryWriterFactory();
+		String formatName = "SHP";
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("Format not supported");
+		writerFactory.createGeometryWriter(formatName);
+	}
 }
