@@ -22,6 +22,11 @@ public class LineStringTest {
 		Assert.assertTrue(l.getPointN(1).isEmpty());
 	}
 	
+	@Test(expected = AssertionError.class)
+	public void testNullPointsConstructor(){
+		new LineString(null);
+	}
+	
 	@Test
 	public void testType() {
 		LineString l = new LineString();
