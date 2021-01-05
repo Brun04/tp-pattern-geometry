@@ -1,7 +1,9 @@
 package org.acme.geometry;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class EnvelopeTest {
 
@@ -31,12 +33,14 @@ public class EnvelopeTest {
 		Assert.assertEquals(4.0, result.getYmax(), EPSILON);	
 	}
 	
-	@Test(expected = AssertionError.class)
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
+	@Test
 	public void testNullInsertCases() {
 		EnvelopeBuilder builder = new EnvelopeBuilder();
-		builder.insert(new Coordinate(0.0, 1.0));
-		builder.insert(null);
-		
+		thrown.expect(AssertionError.class);
+		builder.insert(null);	
 	}
 
 }

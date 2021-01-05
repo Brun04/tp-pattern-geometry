@@ -1,7 +1,9 @@
 package org.acme.geometry;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class PointTest {
 	
@@ -22,8 +24,12 @@ public class PointTest {
 		Assert.assertEquals(-2.5, p.getCoordinate().getY(), EPSILON);
 	}
 	
-	@Test(expected = AssertionError.class)
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	
+	@Test
 	public void testNullConstructor(){
+		thrown.expect(AssertionError.class);
 		new Point(null);
 	}
 	
