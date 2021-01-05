@@ -36,4 +36,17 @@ public class WktVisitorTest {
 		//g.accept(visitor);
 		Assert.assertEquals("LINESTRING EMPTY", g.asText());
 	}
+	
+	@Test
+	public void testWriteGeometryCollection() {
+		AbstractGeometry g = SampleFactory.createGeometryColl();
+		Assert.assertEquals("GEOMETRYCOLLECTION(LINESTRING(1.0 -2.5,0.0 3.0),POINT(1.0 2.0),POINT(0.5 1.0))", g.asText());
+	}
+	
+	
+	@Test
+	public void testWriteEmptyGeometryCollection() {
+		AbstractGeometry g = new GeometryCollection();
+		Assert.assertEquals("GEOMETRYCOLLECTION EMPTY", g.asText());
+	}
 }

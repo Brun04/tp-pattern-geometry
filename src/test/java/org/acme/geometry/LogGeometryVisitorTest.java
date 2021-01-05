@@ -29,4 +29,15 @@ public class LogGeometryVisitorTest {
 		geometry.accept(visitor);
 		Assert.assertEquals(wanted, outStr.toString());
 	}
+	
+	@Test
+	public void testVisitGeomCollection() {
+		String wanted = "I am a GeometryCollection which contained 3 geometrie(s)"; 
+		ByteArrayOutputStream outStr = new ByteArrayOutputStream();
+		PrintStream out = new PrintStream(outStr);
+		LogGeometryVisitor visitor = new LogGeometryVisitor(out);
+		Geometry geometry = SampleFactory.createGeometryColl();
+		geometry.accept(visitor);
+		Assert.assertEquals(wanted, outStr.toString());
+	}
 }

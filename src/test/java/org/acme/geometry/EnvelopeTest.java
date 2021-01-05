@@ -19,18 +19,11 @@ public class EnvelopeTest {
 	
 	@Test
 	public void testInsertHappyCases() {
-		EnvelopeBuilder builder = new EnvelopeBuilder();
-		builder.insert(new Coordinate(0.0, 1.0));
-		builder.insert(new Coordinate(2.0, 0.0));
-		builder.insert(new Coordinate(1.0, 3.0));
-		builder.insert(new Coordinate(1.0, 4.0));
-		builder.insert(new Coordinate(2.0, 2.0));
-		Envelope result = builder.build();
-		
-		Assert.assertEquals(0.0, result.getXmin(), EPSILON);
-		Assert.assertEquals(0.0, result.getYmin(), EPSILON);
-		Assert.assertEquals(2.0, result.getXmax(), EPSILON);
-		Assert.assertEquals(4.0, result.getYmax(), EPSILON);	
+		Envelope e = SampleFactory.createEnvelope();
+		Assert.assertEquals(-1.0, e.getXmin(), EPSILON);
+		Assert.assertEquals(-0.5, e.getYmin(), EPSILON);
+		Assert.assertEquals(5.0, e.getXmax(), EPSILON);
+		Assert.assertEquals(6.0, e.getYmax(), EPSILON);	
 	}
 	
 	@Rule

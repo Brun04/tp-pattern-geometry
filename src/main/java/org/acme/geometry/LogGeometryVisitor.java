@@ -20,4 +20,9 @@ public class LogGeometryVisitor implements GeometryVisitor{
 		this.out.print("I am a "+lineString.getType()+" defined by "+
 				Integer.toString(lineString.getNumPoints())+" point(s)");
 	}
+	
+	public void visit(GeometryCollection geomC) {
+		this.out.print("I am a "+geomC.getType()+" which contained "+
+				Integer.toString(geomC.getNumGeometries())+" geometrie(s)");
+	}
 }

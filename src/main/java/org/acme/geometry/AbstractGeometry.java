@@ -7,9 +7,7 @@ public abstract class AbstractGeometry implements Geometry{
 	private List<GeometryListener> listeners = new ArrayList<GeometryListener>();;
 	
 	@Override
-	public Geometry clone() {
-		return null;
-	}
+	public abstract Geometry clone();
 	
 	public String asText() {
 		WktVisitor visitor = new WktVisitor();

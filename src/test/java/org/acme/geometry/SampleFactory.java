@@ -42,4 +42,26 @@ public class SampleFactory {
 		points.add(createPointN());
 		return new LineString(points);
 	}
+	
+	
+	public static Envelope createEnvelope() {
+		EnvelopeBuilder builder = new EnvelopeBuilder();
+		builder.insert(new Coordinate(0.0, 1.0));
+		builder.insert(new Coordinate(2.0, 0.0));
+		builder.insert(new Coordinate(1.0, 3.0));
+		builder.insert(new Coordinate(1.0, 4.0));
+		builder.insert(new Coordinate(2.0, 2.0));
+		builder.insert(new Coordinate(-1.0, -0.5));
+		builder.insert(new Coordinate(5.0, 6.0));
+		return builder.build();
+	}
+	
+	
+	public static GeometryCollection createGeometryColl() {
+		List<Geometry> geom = new ArrayList<>();
+		geom.add(createLineStringMN());
+		geom.add(new Point(new Coordinate(1.0, 2.0)));
+		geom.add(new Point(new Coordinate(0.5, 1.0)));
+		return new GeometryCollection(geom);
+	}
 }
