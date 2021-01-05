@@ -28,6 +28,7 @@ public class Point implements Geometry{
 		this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
 	}
 	
+	@Override
 	public Geometry clone() {
 		return new Point(this.coordinate);
 	}
@@ -36,5 +37,9 @@ public class Point implements Geometry{
 		EnvelopeBuilder builder = new EnvelopeBuilder();
 		builder.insert(this.coordinate);
 		return builder.build();
+	}
+	
+	public void accept(GeometryVisitor visitor) {
+		visitor.visit(this);
 	}
 }
