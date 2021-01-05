@@ -16,6 +16,14 @@ public class EnvelopeTest {
 		Assert.assertTrue(result.isEmpty());
 	}
 	
+	@Rule
+	public ExpectedException nullExpected = ExpectedException.none();
+	
+	@Test
+	public void testNullCoordinateConstructor() {
+		nullExpected.expect(AssertionError.class);
+		new Envelope(new Coordinate(1.0, 2.0), null);
+	}
 	
 	@Test
 	public void testInsertHappyCases() {
