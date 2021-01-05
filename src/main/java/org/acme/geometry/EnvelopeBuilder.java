@@ -9,6 +9,7 @@ public class EnvelopeBuilder {
 	}
 	
 	public void insert(Coordinate coordinate) {
+		assert(coordinate != null);
 		if(this.bbox.isEmpty()) {
 			this.bbox = new Envelope(coordinate, coordinate);
 		}else {
