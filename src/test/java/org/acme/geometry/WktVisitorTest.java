@@ -7,9 +7,7 @@ public class WktVisitorTest {
 
 	@Test
 	public void testVisitPoint() {
-		//WktVisitor visitor = new WktVisitor();
 		AbstractGeometry g = new Point(new Coordinate(3.0,4.0));
-		//g.accept(visitor);
 		Assert.assertEquals("POINT(3.0 4.0)", g.asText());
 	}
 	
