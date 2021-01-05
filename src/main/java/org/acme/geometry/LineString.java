@@ -46,14 +46,6 @@ public class LineString extends AbstractGeometry implements Geometry{
 		return new LineString(pointsC);
 	}
 	
-	public Envelope getEnvelope() {
-		EnvelopeBuilder builder = new EnvelopeBuilder();
-		for(int i=0; i < this.points.size(); i++) {
-			builder.insert(this.points.get(i).getCoordinate());
-		}
-		return builder.build();
-	}
-	
 	public void accept(GeometryVisitor visitor) {
 		visitor.visit(this);
 	}

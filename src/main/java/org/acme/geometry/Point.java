@@ -33,12 +33,6 @@ public class Point extends AbstractGeometry implements Geometry{
 		return new Point(this.coordinate);
 	}
 	
-	public Envelope getEnvelope() {
-		EnvelopeBuilder builder = new EnvelopeBuilder();
-		builder.insert(this.coordinate);
-		return builder.build();
-	}
-	
 	public void accept(GeometryVisitor visitor) {
 		visitor.visit(this);
 	}
