@@ -5,7 +5,8 @@ public class GeometryWithCachedEnvelope implements Geometry, GeometryListener{
 	private Envelope cachedBbox;
 	
 	public GeometryWithCachedEnvelope(Geometry original) {
-		this.original = original;	
+		this.original = original;
+		this.original.addListener(this);
 	}
 
 	@Override
@@ -32,7 +33,7 @@ public class GeometryWithCachedEnvelope implements Geometry, GeometryListener{
 	public Envelope getEnvelope() {
 		if(this.cachedBbox == null) {
 			this.cachedBbox = this.original.getEnvelope();
-			this.addListener(this);
+			
 		}
 		return this.cachedBbox;
 	}
