@@ -35,4 +35,11 @@ public class SampleFactory {
 		points.add(createPointN());
 		return new LineString(points);
 	}
+	
+	public static LineString createLineStringMN() {
+		List<Point> points = new ArrayList<Point>();
+		points.add(createPointM());
+		points.add(createPointN());
+		return new LineString(points);
+	}
 }
