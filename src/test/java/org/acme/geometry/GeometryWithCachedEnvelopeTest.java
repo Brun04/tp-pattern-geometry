@@ -38,4 +38,13 @@ public class GeometryWithCachedEnvelopeTest {
 		Envelope b = g.getEnvelope();
 		Assert.assertNotSame(a, b);
 	}
+	
+	@Test
+	public void testClone() {
+		Geometry g = SampleFactory.createPointM();
+		g = new GeometryWithCachedEnvelope(g);
+		Geometry copy = g.clone();
+		copy.translate(-1.0, 10.0);
+		Assert.assertNotSame(g.getEnvelope(), copy.getEnvelope());
+	}
 }
