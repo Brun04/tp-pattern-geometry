@@ -6,6 +6,8 @@ import org.junit.Test;
 
 public class GeometryWithCachedEnvelopeTest {
 	
+	public static final double EPSILON = 1.0e-15;
+	
 	@Test
 	public void testGetEnvelope() {
 		Geometry g = SampleFactory.createPointM();
@@ -46,5 +48,14 @@ public class GeometryWithCachedEnvelopeTest {
 		Geometry copy = g.clone();
 		copy.translate(-1.0, 10.0);
 		Assert.assertNotSame(g.getEnvelope(), copy.getEnvelope());
+	}
+	
+	@Test
+	public void testAccept() {
+		GeometryVisitor builder = new EnvelopeBuilder();
+		Geometry g = SampleFactory.createPointM();
+		g = new GeometryWithCachedEnvelope(g);
+		g.accept(builder);
+		Assert.assertEquals(1.0, g.getEnvelope().getXmin(), EPSILON);
 	}
 }
